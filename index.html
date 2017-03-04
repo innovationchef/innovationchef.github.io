@@ -1,213 +1,96 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel = "stylesheet" type = "text/css" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-<link rel = "stylesheet" type = "text/css" href = "style.css"/>
-<script src="https://npmcdn.com/react@15.3.0/dist/react.min.js"></script>
-<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
-<title>
-</title>
+	<title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+body {
+  background: url("https://s3.amazonaws.com/gumroad/files/3721903493365/00c90f3e3d93469cb93a30dd5833b439/original/antiquepaper_1920x1234.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+</style> 
 </head>
 <body>
-<div id="app"></div>
-<script>
-'use strict';
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<div style="font-size:50px;color:white"><center><b>Leaderboard</b></center></div>
+<div class="row">
+<div class="col s2"></div>
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+<div class="col s8">
+	<table class="striped centered responsive-table">
+        <thead style="background-color:rgba(0, 168, 232, 0.79);color:white;font-size:20px;">
+          <tr>
+              <th data-field="id">Rank</th>
+              <th data-field="name">Username</th>
+              <th data-field="price">Stage1 Status</th>
+          </tr>
+        </thead>
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    var _this = _possibleConstructorReturn(this, _React$Component.call(this));
-
-    _this.state = {
-      list: []
-    };
-    _this._clickAllTime = _this._clickAllTime.bind(_this);
-    _this._clickRecent = _this._clickRecent.bind(_this);
-    return _this;
-  }
-
-  App.prototype.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    var fetchInit = {
-      method: 'GET',
-      mode: 'cors'
-    };
-
-    fetch('' + this.props.apiURL, fetchInit).then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      _this2.setState({
-        list: data
-      });
-    }).catch(function (err) {
-      return console.log('fetch error : ', err);
-    });
-  };
-
-  App.prototype._clickAllTime = function _clickAllTime(e) {
-    var sorted = this.state.list.sort(function (a, b) {
-      return b.alltime - a.alltime;
-    });
-    this.setState(sorted);
-  };
-
-  App.prototype._clickRecent = function _clickRecent(e) {
-    var sorted = this.state.list.sort(function (a, b) {
-      return b.recent - a.recent;
-    });
-    this.setState(sorted);
-  };
-
-  App.prototype.render = function render() {
-    var userlist = this.state.list.map(function (user, i) {
-      return React.createElement(User, { username: user.username, rank: i + 1, img: user.img, recent: user.recent, alltime: user.alltime });
-    });
-
-    return React.createElement(
-      'div',
-      { className: 'container' },
-      React.createElement(LeaderboardHeader, null),
-      React.createElement(ColumnHeader, { onClickAll: this._clickAllTime, onClick: this._clickRecent }),
-      userlist
-    );
-  };
-
-  return App;
-}(React.Component);
-
-var LeaderboardHeader = function LeaderboardHeader() {
-  return React.createElement(
-    'div',
-    { className: 'leadheader' },
-    React.createElement(
-      'h2',
-      null,
-      'Leaderboard'
-    )
-  );
-};
-
-var ColumnHeader = function ColumnHeader(_ref) {
-  var onClick = _ref.onClick;
-  var onClickAll = _ref.onClickAll;
-  return React.createElement(
-    'div',
-    { className: 'row colheader' },
-    React.createElement(
-      'div',
-      { className: 'col-xs-1' },
-      React.createElement(
-        'h4',
-        null,
-        '#'
-      )
-    ),
-    React.createElement(
-      'div',
-      { className: 'col-xs-5' },
-      React.createElement(
-        'h4',
-        null,
-        'Name'
-      )
-    ),
-    React.createElement(
-      'div',
-      { className: 'col-xs-3 recent' },
-      React.createElement(
-        'h4',
-        { onClick: onClick },
-        'Last 30 days'
-      )
-    ),
-    React.createElement(
-      'div',
-      { className: 'col-xs-3 alltime' },
-      React.createElement(
-        'h4',
-        { onClick: onClickAll },
-        'All time'
-      )
-    )
-  );
-};
-
-ColumnHeader.propTypes = {
-  onClick: React.PropTypes.func,
-  onClickAll: React.PropTypes.func
-};
-
-var User = function User(_ref2) {
-  var rank = _ref2.rank;
-  var img = _ref2.img;
-  var username = _ref2.username;
-  var recent = _ref2.recent;
-  var alltime = _ref2.alltime;
-
-  return React.createElement(
-    'div',
-    { className: 'row users  vcenter' },
-    React.createElement(
-      'div',
-      { className: 'col-xs-1 rank' },
-      React.createElement(
-        'h4',
-        null,
-        rank
-      )
-    ),
-    React.createElement(
-      'div',
-      { className: 'col-xs-5 name' },
-      React.createElement('img', { src: img, alt: 'avatar' }),
-      ' ',
-      React.createElement(
-        'a',
-        { href: 'https://www.freecodecamp.com/' + username, target: '_blank' },
-        username
-      )
-    ),
-    React.createElement(
-      'div',
-      { className: 'col-xs-3' },
-      React.createElement(
-        'h4',
-        null,
-        recent
-      )
-    ),
-    React.createElement(
-      'div',
-      { className: 'col-xs-3' },
-      React.createElement(
-        'h4',
-        null,
-        alltime
-      )
-    )
-  );
-};
-
-User.propTypes = {
-  rank: React.PropTypes.number.isRequired,
-  img: React.PropTypes.string.isRequired,
-  username: React.PropTypes.string.isRequired,
-  recent: React.PropTypes.number.isRequired,
-  alltime: React.PropTypes.number.isRequired
-};
-
-ReactDOM.render(React.createElement(App, { apiURL: 'recent' }), document.getElementById('app'));
-</script>
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr><tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr><tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr><tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</div>
 </body>
 </html>
