@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Leaderboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 body {
   background: url("https://s-media-cache-ak0.pinimg.com/originals/01/65/dd/0165dd0d8488be3ad52e72efe5299801.jpg") no-repeat center center fixed;
@@ -13,62 +15,61 @@ body {
 </style> 
 </head>
 <body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
- <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 <div style="font-size:25px;color:white;font-family:Arial"><center><b>Communiqu&#233;, IIT Kharagpur</b></center></div>
 <div style="font-size:50px;color:white"><center><b>Causerie - Leaderboard</b></center></div>
-<div class="row">
-<div class="col s2"></div>
+<div class="container">
 
-<div class="col s8">
-	<table class="striped centered responsive-table">
+
+<div class="table-responsive"> 
+	<table  class="table">
         <thead style="background-color:rgba(0, 168, 232, 0.79);color:white;font-size:20px;">
           <tr>
-              <th data-field="id">Rank</th>
-              <th data-field="name">Username</th>
-              <th data-field="price">Stage1 Status</th>
+              <th data-field="id" style="text-align:center;">Rank</th>
+              <th data-field="name" style="text-align:center;">Username</th>
+              <th data-field="price" style="text-align:center;">Stage1 Status</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>1</td><td>vivek_sharma</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>2</td><td>s_ganguly</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>3</td><td>rahul2490</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>4</td><td>deep.bardhan</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>5</td><td>abhishekohanty</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>6</td><td>amandeep</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>7</td><td>prshantjha8640</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>8</td><td>red beard</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>9</td><td>utkarsh23</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>10</td><td>Aviroop</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>11</td><td>abhinav_rathore</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>12</td><td>neel.lodh</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>13</td><td>anubhavpratik</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>14</td><td>shorthair</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>15</td><td>r.arora</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>16</td><td>aryan_s</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>17</td><td>venkat24</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>18</td><td>supdey1</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>19</td><td>ankshulkishore</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>20</td><td>sagnik</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>21</td><td>vaibhavkr</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>22</td><td>mehwal</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>23</td><td>ranitC</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>24</td><td>ashishlal</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>25</td><td>adityagoyal.14</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>26</td><td>biprajit.roy</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>27</td><td>anshul.kishore</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>28</td><td>akhil.jain077</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>29</td><td>rishabh.chandra</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>30</td><td>soumen</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>31</td><td>prashant_jha</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(250, 250, 250, 0.79);"><td>32</td><td>santhanam</td><td>Submitted</td></tr>
-          <tr style="background-color:rgba(230, 230, 250, 0.79);"><td>33</td><td>jimmy</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>1</td><td>vivek_sharma</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>2</td><td>s_ganguly</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>3</td><td>rahul2490</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>4</td><td>deep.bardhan</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>5</td><td>abhishekohanty</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>6</td><td>amandeep</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>7</td><td>prshantjha8640</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>8</td><td>red beard</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>9</td><td>utkarsh23</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>10</td><td>Aviroop</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>11</td><td>abhinav_rathore</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>12</td><td>neel.lodh</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>13</td><td>anubhavpratik</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>14</td><td>shorthair</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>15</td><td>r.arora</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>16</td><td>aryan_s</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>17</td><td>venkat24</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>18</td><td>supdey1</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>19</td><td>ankshulkishore</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>20</td><td>sagnik</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>21</td><td>vaibhavkr</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>22</td><td>mehwal</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>23</td><td>ranitC</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>24</td><td>ashishlal</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>25</td><td>adityagoyal.14</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>26</td><td>biprajit.roy</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>27</td><td>anshul.kishore</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>28</td><td>akhil.jain077</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>29</td><td>rishabh.chandra</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>30</td><td>soumen</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>31</td><td>prashant_jha</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(250, 250, 250, 0.79);text-align:center;"><td>32</td><td>santhanam</td><td>Submitted</td></tr>
+          <tr style="background-color:rgba(230, 230, 250, 0.79);text-align:center;"><td>33</td><td>jimmy</td><td>Submitted</td></tr>
           
         </tbody>
       </table>
 </div>
+
 </div>
 </body>
 </html>
+
